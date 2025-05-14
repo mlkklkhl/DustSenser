@@ -14,22 +14,10 @@ WIFIpsw = "coeai123"
 room = 'Test'
 
 device_ID1 = 'Test'
-## In case multi
-# device_ID2 = 'ACWU-Co2'
-# device_ID3 = 'ACWU-Co3'
-
-## In case multi outdoor for multiCurrentwithOutdoorOnly, singleCurrentwithOutdoorOnly
-# DeviceOutdoor2 = ''
-
-# CT30A = 80, CT10A = 30
-# currentCalibration1 = 55
-# currentCalibration2 = 80
-# currentCalibration3 = 80
 
 # URL = 'https://smart-air-care-default-rtdb.asia-southeast1.firebasedatabase.app'
 
 # create a current object refering to the sensor’s data pin
-
 ## MultiCurrent Board ### White board swaps between indoor and outdoor
 sensor = dht.DHT22(machine.Pin(27))
 
@@ -177,46 +165,7 @@ def main():
         
         try:
             led_pin.value(1)
-
-            ## For a room with multiple ACs with indoor DHT, and outdoor DHT
-            # multiCurrentwithIndoorOutdoor(now, t[5])
-
-            ## For a room with an AC with indoor DHT, and outdoor DHT
-            # singleCurrentwithIndoorOutdoor(now, t[5])
-
-            ## For a room with an multiple ACs with indoor DHT
-            # multiCurrentwithIndoorOnly(now, t[5])
-
-            ## For a room with an multiple ACs with outdoor DHT (edit in fuction for outdoor DHT for another room, edit room2, DeviceOutdoor2)
-            # multiCurrentwithOutdoorOnly(now, t[5])
-
-            ## For a room with an AC with indoor DHT
-            # singleCurrentwithIndoorOnly(now, t[5])
-
-            ## For a room with an AC with outdoor DHT (edit in fuction for outdoor DHT for another room, edit room2, DeviceOutdoor2)
-            # singleCurrentwithOutdoorOnly(now, t[5])
-
-            ## For a room with an AC only, no DHT
-            # singleCurrentOnly(now, t[5])
-
-            ## For a room with an multiple ACs only, no DHT
-            # multiCurrentOnly(now, t[5])
-
-            ## For outdoor DHT, no AC (edit in fuction for another room, edit room2, device_ID2)
-            # outdoorDHTBoardOnly(now, t[5])
-
-            ## For indoor DHT, no AC
-            # indoorDHTBoardOnly(now, t[5])
-
-            ## For indoor and outdoor board, no AC
-            # indoorAndOutdoor(now, t[5])
-
-            ## For a room with an AC with indoor DHT, outdoor DHT, and Dust sensor
-            # singleCurrentwithIndoorOutdoorDust(now, t[5])
-
-            ## For a room with indoor DHT, and Dust sensor
             indoorDust(now, t[5])
-
             led_pin.value(0)
 
         except Exception as e:               
